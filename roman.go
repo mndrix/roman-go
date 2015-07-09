@@ -1,3 +1,4 @@
+// Package roman provides functions for working with Roman numerals.
 package roman
 
 import (
@@ -7,8 +8,11 @@ import (
 	"strings"
 )
 
-var ErrOutOfRange = errors.New("Arabic number out of range. Must be 1 to 3,999")
-var ErrEmptyString = errors.New("Empty string is invalid Roman numeral")
+// Errors returned by Encode or Decode.
+var (
+	ErrOutOfRange  = errors.New("Arabic number out of range. Must be 1 to 3,999")
+	ErrEmptyString = errors.New("Empty string is invalid Roman numeral")
+)
 
 // error type for encountering non-Roman digits
 type errInvalidDigit struct {
@@ -56,11 +60,14 @@ var pairs = []pair{
 	pair{"I", 1},
 }
 
-func IsValid(r string) bool {
-	_, err := Decode(r)
+// IsValid returns true if the argument represents a valid Roman numeral.
+func IsValid(roman string) bool {
+	_, err := Decode(roman)
 	return err == nil
 }
 
+// Encode converts an integer into its Roman numeral representation.
+// If the integer is too large or small, returns ErrOutOfRange.
 func Encode(arabic int) (string, error) {
 	if arabic < 1 || arabic > 3999 {
 		return "", ErrOutOfRange
@@ -80,6 +87,10 @@ func Encode(arabic int) (string, error) {
 	return roman, nil
 }
 
+// Decode converts a Roman numeral string into the corresponding
+// Arabic number.  If the string is empty, returns ErrEmptyString.
+// If the string is not a valid Roman number, returns an error
+// describing why.
 func Decode(roman string) (int, error) {
 	if len(roman) == 0 {
 		return 0, ErrEmptyString
