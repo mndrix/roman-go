@@ -8,7 +8,7 @@ import (
 )
 
 var ErrOutOfRange = errors.New("Arabic number out of range. Must be 1 to 3,999")
-var ErrEmptyString = errors.New("Empty string is invalid Roman numerals")
+var ErrEmptyString = errors.New("Empty string is invalid Roman numeral")
 
 // error type for encountering non-Roman digits
 type errInvalidDigit struct {
