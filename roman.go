@@ -45,19 +45,19 @@ var arabicFor = map[rune]int{
 	'M': 1000,
 }
 var pairs = []pair{
-	pair{"M", 1000},
-	pair{"CM", 900},
-	pair{"D", 500},
-	pair{"CD", 400},
-	pair{"C", 100},
-	pair{"XC", 90},
-	pair{"L", 50},
-	pair{"XL", 40},
-	pair{"X", 10},
-	pair{"IX", 9},
-	pair{"V", 5},
-	pair{"IV", 4},
-	pair{"I", 1},
+	{"M", 1000},
+	{"CM", 900},
+	{"D", 500},
+	{"CD", 400},
+	{"C", 100},
+	{"XC", 90},
+	{"L", 50},
+	{"XL", 40},
+	{"X", 10},
+	{"IX", 9},
+	{"V", 5},
+	{"IV", 4},
+	{"I", 1},
 }
 
 // IsValid returns true if the argument represents a valid Roman numeral.
