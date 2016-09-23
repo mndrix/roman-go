@@ -5,7 +5,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/mndrix/roman.go"
+	"github.com/mndrix/roman-go"
 )
 
 func main() {
